@@ -13,7 +13,7 @@ func on_game_over():
 	#显示计分板
 	$AnimationPlayer.play("show")
 
-func _process(delta):
+func _process(_delta):
 	if(Input.is_mouse_button_pressed(1)):
 		get_tree().call_group("GAME_STATE","on_game_start")
 

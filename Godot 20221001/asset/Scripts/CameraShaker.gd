@@ -12,5 +12,6 @@ func disturb_offset(s:float):
 	camera.position.y = rand_range(-s, s)
 
 func on_game_over():
-	interpolate_method(self, "disturb_offset", strength, 0, duration, Tween.TRANS_SINE, Tween.EASE_OUT, 0)
+	interpolate_method(self, "disturb_offset", strength, 0, duration, 
+	Tween.TRANS_SINE, Tween.EASE_OUT, 0)
 	start()
