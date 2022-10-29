@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/Texture/Kenney Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Script/Hub.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 23
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 1 )
+
+[node name="Hub" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Message" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -89.5
+margin_top = -17.5
+margin_right = 89.5
+margin_bottom = 17.5
+custom_fonts/font = SubResource( 1 )
+text = "Coin Dash"
+
+[node name="Startbtn" type="Button" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 194.0
+margin_top = -163.0
+margin_right = -194.0
+margin_bottom = -133.0
+custom_fonts/font = SubResource( 2 )
+text = "start"
+icon_align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+
+[node name="Score" type="Label" parent="MarginContainer"]
+margin_right = 460.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 3 )
+text = "score"
+
+[node name="Time" type="Label" parent="MarginContainer"]
+margin_right = 460.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 3 )
+text = "time"
+align = 2
+
+[node name="MessageCountdown" type="Timer" parent="."]
+wait_time = 2.5
+
+[connection signal="button_down" from="Startbtn" to="." method="_on_Startbtn_button_down"]

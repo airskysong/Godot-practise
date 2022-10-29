@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://interface_btn_theme.tres" type="Theme" id=1]
+[ext_resource path="res://BOBOHEI-2.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Asset/Object/Transition.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Asset/Scripts/Main.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_size = 3
+outline_color = Color( 1, 0.109804, 0.0156863, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 3
+outline_color = Color( 1, 0.109804, 0.0156863, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="interface" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/interface"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0705882, 0.0117647, 0.0117647, 1 )
+
+[node name="Label" type="Label" parent="CanvasLayer/interface"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -174.0
+margin_right = 120.0
+margin_bottom = -96.0
+custom_fonts/font = SubResource( 1 )
+text = "舒尔特表"
+align = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/interface"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -52.5
+margin_top = -22.5
+margin_right = 52.5
+margin_bottom = 22.5
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "start"
+
+[node name="Transition" parent="CanvasLayer" instance=ExtResource( 3 )]

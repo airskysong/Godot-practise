@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Asset/level.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Level.gd" type="Script" id=2]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/CenterContainer"]
+margin_left = 277.0
+margin_top = 361.0
+margin_right = 323.0
+margin_bottom = 439.0
+custom_colors/font_color = Color( 0.956863, 0.945098, 0.658824, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "3"
+align = 1
+valign = 1

@@ -21,6 +21,7 @@ func _process(delta):
 		angular_velocity = 1.5
 	if(rotation_degrees > 90):
 		rotation_degrees = 90
+	
 
 func on_body_entered(_body):
 	if(_body is StaticBody2D):
