@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://BOBOHEI-2.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://interface_btn_theme.tres" type="Theme" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Asset/Object/Transition.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Grid_Btn.gd" type="Script" id=5]
 [ext_resource path="res://Asset/Object/Effect.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Asset/Object/GameOverUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Asset/Scripts/Camera2D.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=2]
 size = 49
@@ -355,3 +357,9 @@ margin_bottom = -669.0
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 491, 145 )
+
+[node name="GameOverUI" parent="." instance=ExtResource( 7 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 8 )

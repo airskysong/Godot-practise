@@ -1,0 +1,97 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Asset/Sprites/魔战士.png" type="Texture" id=1]
+
+[node name="Warrior" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Leg_right" type="Polygon2D" parent="Node2D"]
+position = Vector2( -240, -88 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 220, 130, 210, 140, 200, 160, 190, 180, 200, 200, 220, 200, 230, 190, 230, 180, 240, 160, 240, 130 )
+uv = PoolVector2Array( 220, 130, 210, 140, 200, 160, 190, 180, 200, 200, 220, 200, 230, 190, 240, 180, 240, 160, 240, 130 )
+bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest/Head", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest/arm_right", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest/arm_left", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/chest/arm_left/arm_left2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/leg_right", PoolRealArray( 0.48, 0.96, 0.96, 0.96, 0.96, 0.96, 1, 1, 0.48, 0.48 ), "hip/leg_left", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="Leg_left" type="Polygon2D" parent="Node2D"]
+position = Vector2( -248, -88 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D/hip/leg_left")
+polygon = PoolVector2Array( 270, 120, 260, 130, 250, 140, 250, 160, 250, 180, 260, 200, 270, 200, 280, 200, 290, 190, 290, 170, 290, 150, 280, 140, 280, 130 )
+uv = PoolVector2Array( 270, 120, 260, 130, 250, 140, 250, 160, 250, 180, 260, 200, 270, 200, 280, 200, 290, 190, 290, 170, 290, 150, 280, 140, 280, 130 )
+
+[node name="Head" type="Polygon2D" parent="Node2D"]
+position = Vector2( -120, -144 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D/hip/chest/Head")
+polygon = PoolVector2Array( 0, 10, 0, 40, 20, 80, 30, 150, 50, 160, 90, 160, 150, 160, 170, 160, 180, 130, 180, 110, 180, 80, 190, 60, 200, 30, 190, 0, 180, 10, 160, 40, 130, 30, 110, 20, 70, 30, 50, 40 )
+uv = PoolVector2Array( 0, 10, 0, 40, 20, 80, 30, 150, 50, 160, 90, 160, 150, 160, 170, 160, 180, 130, 180, 110, 180, 80, 190, 60, 200, 30, 190, 0, 180, 0, 160, 40, 130, 30, 110, 20, 70, 30, 50, 40 )
+
+[node name="Hand" type="Polygon2D" parent="Node2D"]
+position = Vector2( -216, -232 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D/hip/chest/arm_left")
+polygon = PoolVector2Array( 240, 240, 230, 260, 250, 280, 260, 290, 270, 290, 280, 280, 280, 260, 270, 250, 260, 240 )
+uv = PoolVector2Array( 240, 240, 230, 260, 250, 280, 260, 290, 270, 290, 280, 280, 280, 260, 270, 250, 260, 240 )
+
+[node name="Body" type="Polygon2D" parent="Node2D"]
+position = Vector2( -48, -200 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D/hip/chest")
+polygon = PoolVector2Array( 40, 180, 20, 180, 0, 220, 0, 250, 10, 280, 80, 280, 90, 250, 90, 220, 80, 190, 70, 180 )
+uv = PoolVector2Array( 40, 180, 20, 180, 0, 220, 0, 250, 10, 280, 80, 280, 90, 250, 90, 220, 80, 190, 70, 180 )
+
+[node name="Sword" type="Polygon2D" parent="Node2D"]
+position = Vector2( -40, -224 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D/hip/chest/arm_left/arm_left2")
+polygon = PoolVector2Array( 100, 210, 100, 250, 90, 260, 90, 270, 100, 280, 110, 280, 120, 300, 130, 300, 130, 280, 190, 270, 200, 270, 230, 230, 230, 220, 180, 200, 120, 230 )
+uv = PoolVector2Array( 100, 210, 100, 250, 90, 260, 90, 270, 100, 280, 110, 280, 120, 300, 130, 300, 130, 280, 190, 270, 200, 270, 230, 230, 230, 220, 180, 200, 120, 230 )
+
+[node name="Shield" type="Polygon2D" parent="Node2D"]
+position = Vector2( -312, -24 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D/hip/chest/arm_right")
+polygon = PoolVector2Array( 210, 30, 220, 10, 250, 10, 270, 10, 280, 30, 290, 60, 290, 90, 270, 110, 250, 120, 230, 110, 210, 100, 200, 80, 200, 60 )
+uv = PoolVector2Array( 210, 30, 220, 10, 240, 10, 270, 10, 280, 30, 290, 60, 290, 90, 270, 110, 250, 120, 230, 110, 210, 100, 200, 80, 200, 60 )
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Node2D"]
+
+[node name="hip" type="Bone2D" parent="Node2D/Skeleton2D"]
+position = Vector2( 0, 48 )
+rest = Transform2D( 1, 0, 0, 1, 0, 48 )
+
+[node name="chest" type="Bone2D" parent="Node2D/Skeleton2D/hip"]
+position = Vector2( 0, -24 )
+rest = Transform2D( 1, 0, 0, 1, 0, -24 )
+
+[node name="Head" type="Bone2D" parent="Node2D/Skeleton2D/hip/chest"]
+position = Vector2( -8, -32 )
+rotation = -1.45606
+scale = Vector2( 4.52529, 5.17511 )
+rest = Transform2D( 0.518072, -4.49554, 5.14108, 0.592465, -8, -32 )
+
+[node name="arm_right" type="Bone2D" parent="Node2D/Skeleton2D/hip/chest"]
+position = Vector2( -56, -8 )
+rotation = 1.59204
+scale = Vector2( 2.81431, 1 )
+rest = Transform2D( -0.0597807, 2.81368, -0.999774, -0.0212417, -56, -8 )
+
+[node name="arm_left" type="Bone2D" parent="Node2D/Skeleton2D/hip/chest"]
+position = Vector2( 40, -8 )
+rest = Transform2D( 1, 0, 0, 1, 40, -8 )
+
+[node name="arm_left2" type="Bone2D" parent="Node2D/Skeleton2D/hip/chest/arm_left"]
+position = Vector2( 8, 24 )
+rotation = -0.285109
+scale = Vector2( 6.88507, 23.4834 )
+rest = Transform2D( 6.60713, -1.93651, 6.60498, 22.5354, 8, 24 )
+
+[node name="leg_right" type="Bone2D" parent="Node2D/Skeleton2D/hip"]
+position = Vector2( -40, 24 )
+rest = Transform2D( 1, 0, 0, 1, -40, 24 )
+
+[node name="leg_left" type="Bone2D" parent="Node2D/Skeleton2D/hip"]
+position = Vector2( 32, 24 )
+rest = Transform2D( 1, 0, 0, 1, 32, 24 )

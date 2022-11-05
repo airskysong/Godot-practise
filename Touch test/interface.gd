@@ -51,12 +51,15 @@ func on_btn_clicked(var msg):
 		remain -= 1
 		play_effect(obj.get_global_rect().position + obj.get_minimum_size()/2)
 		update_remain_ui()
-		
 	else:
 		miss += 1
-		update_miss_ui() 
+		update_miss_ui()
+		$Camera2D.begin_shake()
+	
+	if remain == 0:
+		game_over()
 
-
+		
 func play_effect(var pos):
 	$Effect/Particles2D.position = pos
 	$Effect/Particles2D.restart()
@@ -78,3 +81,9 @@ func check_answer(var num):
 	if index < answer.size() && num == answer[index]:
 		index += 1
 		return true
+		
+func game_over():
+		$Timer.stop()
+		$GameOverUI.update_miss_ui(miss)
+		$GameOverUI.update_time_ui(time)
+		$GameOverUI.show_game_over_ui()

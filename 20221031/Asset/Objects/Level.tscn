@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Asset/Scripts/Level.gd" type="Script" id=1]
+[ext_resource path="res://Asset/Objects/Tile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Asset/Objects/RedWarrior.tscn" type="PackedScene" id=3]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+tile_model = ExtResource( 2 )
+map_size = Vector2( 20, 10 )
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="Player1" type="Node2D" parent="."]
+
+[node name="RedWarrior" parent="Player1" instance=ExtResource( 3 )]
+z_index = 1
+
+[node name="RedWarrior2" parent="Player1" instance=ExtResource( 3 )]
+z_index = 1
+
+[node name="Player2" type="Node2D" parent="."]
