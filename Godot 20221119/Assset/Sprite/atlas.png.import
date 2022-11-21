@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/atlas.png-bd3bd1b822d606023eb016ca416b611c.res"
+group_file="res://Assset/UI/atlas/generic-rpg-ui-text-box.png"
+valid=true
+[deps]
+
+
+source_file="res://Assset/Sprite/atlas.png"
+dest_files=[ "res://.import/atlas.png-bd3bd1b822d606023eb016ca416b611c.res" ]
+
+[params]
+
+atlas_file="res://Assset/UI/atlas/generic-rpg-ui-text-box.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

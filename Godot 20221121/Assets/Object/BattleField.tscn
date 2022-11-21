@@ -1,0 +1,193 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/Fonts/Kingnam-Maiyuan-2.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Sprites/Background/battleback1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Object/EnemyBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Scripts/BattleField.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 1, 0.235294, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 23
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 48
+font_data = ExtResource( 1 )
+
+[node name="BattleField" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BG" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="PlayerPanel" type="Panel" parent="Control"]
+modulate = Color( 1, 1, 1, 0.784314 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -120.0
+rect_min_size = Vector2( 1024, 120 )
+
+[node name="PlayerBox" type="HBoxContainer" parent="Control/PlayerPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PlayerText" type="Label" parent="Control/PlayerPanel/PlayerBox"]
+margin_top = 34.0
+margin_right = 510.0
+margin_bottom = 85.0
+size_flags_horizontal = 7
+custom_fonts/font = SubResource( 4 )
+text = "玩家"
+align = 1
+
+[node name="Healthbar" type="ProgressBar" parent="Control/PlayerPanel/PlayerBox"]
+margin_left = 672.0
+margin_top = 44.0
+margin_right = 866.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 194, 32 )
+size_flags_horizontal = 6
+size_flags_vertical = 4
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+step = 1.0
+value = 50.0
+percent_visible = false
+
+[node name="HealthValue" type="Label" parent="Control/PlayerPanel/PlayerBox/Healthbar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -99.0
+margin_top = -16.0
+margin_right = 95.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 5 )
+text = "25/50"
+align = 1
+valign = 1
+
+[node name="ActionPanel" type="Panel" parent="Control"]
+anchor_right = 1.0
+rect_min_size = Vector2( 1024, 120 )
+
+[node name="ActionBox" type="HBoxContainer" parent="Control/ActionPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="AttackBtn" type="Button" parent="Control/ActionPanel/ActionBox"]
+margin_right = 332.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "攻击"
+
+[node name="DefenceBtn" type="Button" parent="Control/ActionPanel/ActionBox"]
+margin_left = 336.0
+margin_right = 668.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "防御"
+
+[node name="RunBtn" type="Button" parent="Control/ActionPanel/ActionBox"]
+margin_left = 672.0
+margin_right = 1004.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "逃跑"
+
+[node name="MessageBox" type="Panel" parent="Control"]
+visible = false
+anchor_right = 1.0
+rect_min_size = Vector2( 1024, 140 )
+
+[node name="MsgText" type="Label" parent="Control/MessageBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 12 )
+text = "敌人出现了"
+align = 1
+valign = 1
+
+[node name="EnemiesBox" type="HBoxContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 140.0
+margin_bottom = -120.0
+
+[node name="Enemy" parent="Control/EnemiesBox" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 340.0

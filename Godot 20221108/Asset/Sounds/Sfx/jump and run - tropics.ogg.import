@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jump and run - tropics.ogg-febdb27faa4a38e19840099646909492.oggstr"
+
+[deps]
+
+source_file="res://Asset/Sounds/Sfx/jump and run - tropics.ogg"
+dest_files=[ "res://.import/jump and run - tropics.ogg-febdb27faa4a38e19840099646909492.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

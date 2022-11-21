@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Asset/Sprite/摇杆中心.png" type="Texture" id=1]
+[ext_resource path="res://Asset/Sprite/摇杆区域.png" type="Texture" id=2]
+[ext_resource path="res://Asset/Scripts/JoyStick.gd" type="Script" id=3]
+
+[node name="JoyStick" type="Sprite"]
+modulate = Color( 1, 1, 1, 0.235294 )
+position = Vector2( 153, 439 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Center" type="Sprite" parent="."]
+texture = ExtResource( 1 )

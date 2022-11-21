@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Asset/Scripts/ScreenFade.gd" type="Script" id=1]
+[ext_resource path="res://Asset/Sprites/gradients/radial_gradient.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float alpha : hint_range(0.0, 1.0, 0.1);
+
+uniform sampler2D mask;
+
+void fragment(){
+	COLOR = texture(mask, UV);
+	float v = smoothstep(0, COLOR.r, alpha);
+	v = 1.0 - v;
+	COLOR = vec4(v, v, v, 1.0-v);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/alpha = 0.0
+shader_param/mask = ExtResource( 2 )
+
+[node name="ScreenFade" type="Node2D"]
+script = ExtResource( 1 )
+fade_transition = 0.5
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="transition" type="CanvasLayer" parent="."]
+
+[node name="fade" type="ColorRect" parent="transition"]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )

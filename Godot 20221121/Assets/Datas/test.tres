@@ -1,0 +1,29 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Sprites/Monster/05b.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Resource
+
+export(Texture) var pic
+export(String) var enemy_name
+export(int) var max_health
+export(int) var defence
+export(int) var attack
+
+func _init(pic = null, enemy_name = null, max_health=0, defence=0, attack=0):
+	self.pic = pic
+	self.enemy_name = enemy_name
+	self.max_health = max_health
+	self.defence = defence
+	self.attack = attack
+	
+"
+
+[resource]
+script = SubResource( 1 )
+pic = ExtResource( 1 )
+enemy_name = ""
+max_health = 100
+defence = 5
+attack = 5
